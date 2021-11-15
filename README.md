@@ -125,3 +125,9 @@ The program will run server that serves static hmtl files. You can also specify 
 }
 ```
 As index page you will get folder tree. You can also add some general additional files with documentation there.
+
+In order to just open index page, you can type command:
+
+```
+explain me all
+```
