@@ -23,10 +23,10 @@ So, let's say we have directory with source code:
 │   ├── dir2
 │   │   ├── c.js
 ```
-When you type command:
+When you type command in root of your project:
 
 ```
-explain init <source folder path> <docs folder name>
+explain init <docs folder name>
 ```
 (by default `docs folder name` is `ProjectNameDocs` (name of your source folder + `Docs`))
 
@@ -46,10 +46,10 @@ Now you can modify all your md files. You can set links to other files and dicti
 
 ## Creates dictionary
 
-If you type command:
+If you type command in root of your project:
 
 ```
-explain init dictionary <source folder path> <dictionary folder name>
+explain init dictionary <dictionary folder name>
 ```
 
 (by default `dictionary folder name` is `ProjectNameDictionary` (name of your source folder + `Dictionary`))
@@ -65,22 +65,21 @@ So, in that folder you can create term files, each file for one specific term, w
 
 ## Creates doc for future source file/term.
 
-By typing command
+By typing command in root of your project:
 
 ```
-explain future <sourceFolderName/path/to/file.js>
+explain future <path/to/file.js>
 ```
 
-you'll get created empty source file `sourceFolderName/path/to/file.js` and corresponding `sourceFolderName/docFolderName/path/to/file.md`. `docFolderName` is delcared in config file `.explain`:
+you'll get created empty source file `path/to/file.js` in your project folder and corresponding `docFolderName/path/to/file.md`. `docFolderName` is delcared in config file `.explain`:
 
 ```json
 {
-  "docFolderName": "docs",
-  "dictionaryFolderName": "dictionary"
+  "docFolderName": "docs"
 }
 ```
 
-This file can be created manually and also when you [create documentation for existing source code](#creates-documentation-for-existing-source-code)
+This file can be created manually and also when you [create documentation for existing source code](#creates-documentation-for-existing-source-code).
 
 By typing command
 
@@ -89,6 +88,13 @@ explain future term <term name>
 ```
 
 you'll get term file(with specified name) in configured `dictionaryFolderName`.
+
+```json
+{
+  "docFolderName": "docs",
+  "dictionaryFolderName": "dictionary"
+}
+```
 
 ## Explains you term or source file
 
@@ -130,4 +136,12 @@ In order to just open index page, you can type command:
 
 ```
 explain me all
+```
+
+## Shows you doc coverage
+
+If you type command:
+
+```
+explain coverage 
 ```
