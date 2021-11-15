@@ -145,3 +145,5 @@ If you type command:
 ```
 explain coverage 
 ```
+
+you'll get information about how much code is covered with docs. This information is also available on index page.
