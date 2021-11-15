@@ -63,7 +63,7 @@ you'll get dictionary folder:
 
 So, in that folder you can create term files, each file for one specific term, where you can explain a certain variable or concept/pattern in the code.
 
-## Creates doc for future source file.
+## Creates doc for future source file/term.
 
 By typing command
 
@@ -75,9 +75,53 @@ you'll get created empty source file `sourceFolderName/path/to/file.js` and corr
 
 ```json
 {
-  "docFolderName": "docs"
+  "docFolderName": "docs",
+  "dictionaryFolderName": "dictionary"
 }
 ```
 
-This file can be created manually and also when you [create documentation for existing source code]()
+This file can be created manually and also when you [create documentation for existing source code](#creates-documentation-for-existing-source-code)
 
+By typing command
+
+```
+explain future term <term name>
+```
+
+you'll get term file(with specified name) in configured `dictionaryFolderName`.
+
+## Explains you term or source file
+
+If you type command:
+
+```
+explain me [source file.js]
+```
+
+or
+
+```
+explain me term [term name]
+```
+
+you'll get opened browser with rendered markdown, where you can see documentation. Program also creates additional html files and you can configure their location as well in `.explain`:
+
+```json
+{
+  "docFolderName": "docs",
+  "dictionaryFolderName": "dictionary",
+  "docHTMLFolderName": "html-docs"
+}
+```
+
+The program will run server that serves static hmtl files. You can also specify port where all you docs can be opened in a browser:
+
+```json
+{
+  "docFolderName": "docs",
+  "dictionaryFolderName": "dictionary",
+  "docHTMLFolderName": "html-docs",
+  "port": 8080
+}
+```
+As index page you will get folder tree. You can also add some general additional files with documentation there.
